@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="cal.css">
+<body>
+<div class="parent">
+    <h2>Calculator</h2>
+    <div class="child1">
+        <input type="text" name="value" id="valuebox"></div>
+    <div class="calc">
+    <button  type="button"onclick="addnumber(1)" class="div div1">1</button>
+    <button type="button" onclick="addnumber(2)" class="div div2">2</button>
+    <button type="button" onclick="addnumber(3)" class="div div3">3</button>
+    <button type="button" onclick="addnumber(4)" class="div div4">4</button>
+    <button type="button" onclick="addnumber(5)" class="div div5">5</button>
+    <button type="button" onclick="addnumber(6)" class="div div6">6</button>
+    <button type="button" onclick="addnumber(7)" class="div div7">7</button>
+    <button type="button" onclick="addnumber(8)" class="div div8">8</button>
+    <button type="button" onclick="addnumber(9)" class="div div9">9</button>
+    <button type="button" onclick="addnumber('+')" class="div add">+</button>
+    <button type="button" onclick="addnumber('-')" class="div sub">-</button>
+    <button type="button" onclick="addnumber('.')" class="div dot">.</button>
+    <button type="button" onclick="addnumber(0)" class="div div10">0</button>
+    <button type="button" onclick="addnumber('/')" class="div divi">/</button>
+    <button type="button" onclick="addnumber('*')" class="div mul">*</button>
+    <button type="button" onclick="result()" class="div equal">=</button>
+    <button type="button"onclick="ClearValubox()" class="div reset">Clear</button>
+    <button type="button"onclick="DeleteChar()" class="div del">Delete</button>
+</div>
+</body>
+<script>
+    function ClearValubox(){
+        document.getElementById("valuebox").value = "";
+    }
+    function addnumber(div){
+        document.getElementById("valuebox").value += div
+    }
+    function DeleteChar(){
+        var last=document.getElementById("valuebox").value;
+        document.getElementById("valuebox").value=last.slice(0,-1);
+    }
+    function result(){
+        let result=eval(document.getElementById("valuebox").value);
+        document.getElementById("valuebox").value=result;
+    }
+</script>
+</html>
